@@ -6,19 +6,22 @@ function buildMetadata(sample) {
     let metadata = data.metadata;
     
     // Filter the metadata for the object with the desired sample number
-    let object = metadata.filter(sampleResult => sampleResult.id == sample);
+    let sampNumb = metadata.filter(sampleObj => sampleObj.id == sample);
+    let samp = sampNumb[0]
 
     // Use d3 to select the panel with id of `#sample-metadata`
-    let sammeta = d3.select("#sample-metadata").text();
+    let sammeta = d3.select("#sample-metadata");
 
     // Use `.html("") to clear any existing metadata
-    d3.select("#sample-metadata").html("");
+    sammeta.html("");
 
     // Inside a loop, you will need to use d3 to append new
     // tags for each key-value in the filtered metadata.
-
+    for (key in samp){
+    sammeta.append("h6").text(`${key}: ${samp[key]}`);
+    };
   });
-}
+};
 
 // function to build both charts
 function buildCharts(sample) {
