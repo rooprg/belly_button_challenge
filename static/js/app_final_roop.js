@@ -40,22 +40,65 @@ function buildCharts(sample) {
     let sample_values = samp1.sample_values;
 
     // Build a Bubble Chart
+    var trace1 = {
+      x: otu_ids,
+      y: sample_values,
+      text: otu_labels,
+      mode: 'markers',
+      marker: {
+        color: otu_ids,
+        size: sample_values
+      }
+    };
 
+    var data = [trace1];
+
+    var layout = {
+      title: "Bacteria Cultures Per Sample",
+      xaxis: {title: "OTU_ID" },
+      yaxis: {title: "Number of Bacteria"},
+      showlegend: false,
+      height: 600,
+      width: 600
+    }
 
     // Render the Bubble Chart
-
+    Plotly.newPlot('myDiv', data, layout);
 
     // For the Bar Chart, map the otu_ids to a list of strings for your yticks
 
 
     // Build a Bar Chart
     // Don't forget to slice and reverse the input data appropriately
+      //Reverse: <array>.reverse();
+      //Slice top 10: <sorted_array>.slice(0, 10);
 
+      var trace2 = {
+        x: ,
+        y: ,
+        name: 
+        orientation: 'h',
+        type: 'bar',
+        marker: {
+          color: 'blue',
+          size: 10
+        }
+      }
+  
+      var data2 = [trace2];
+  
+      var layout2 {
+        title: "Top 10 Bacteria Cultures Found",
+        xaxis: {title: "OTU_ID" },
+        yaxis: {title: "Number of Bacteria"},
+        showlegend: false,
+        height: 600,
+        width: 600
+      }
+  };
 
     // Render the Bar Chart
-
-  });
-}
+    Plotly.newPlot('myDiv', data2, layout2);
 
 // Function to run on page load
 function init() {
