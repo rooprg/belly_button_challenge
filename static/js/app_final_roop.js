@@ -9,7 +9,7 @@ function buildMetadata(sample) {
     let sampNumb = metadata.filter(sampleObj => sampleObj.id == sample);  
     let samp = sampNumb[0]
 
-    Use d3 to select the panel with id of `#sample-metadata`
+    // Use d3 to select the panel with id of `#sample-metadata`
     let sammeta = d3.select("#sample-metadata");
 
     // Use `.html("") to clear any existing metadata
@@ -66,12 +66,12 @@ function buildCharts(sample) {
     Plotly.newPlot('myDiv', data, layout);
 
     // For the Bar Chart, map the otu_ids to a list of strings for your yticks
-
+    let yticks = otu_ids.map(otuID => `OTU ${otuID}`);
 
     // Build a Bar Chart
     // Don't forget to slice and reverse the input data appropriately
-      //Reverse: <array>.reverse();
-      //Slice top 10: <sorted_array>.slice(0, 10);
+      let yticksSliced = yticks.slice(0,10)
+      let yticksRev = yticksSliced.reverse();
 
       var trace2 = {
         x: ,
@@ -105,10 +105,10 @@ function init() {
   d3.json("https://static.bc-edx.com/data/dl-1-2/m14/lms/starter/samples.json").then((data) => {
 
     // Get the names field
-
+    let metadata = data.names;
 
     // Use d3 to select the dropdown with id of `#selDataset`
-
+    let pageID = d3.select("#selDataset");
 
     // Use the list of sample names to populate the select options
     // Hint: Inside a loop, you will need to use d3 to append a new
