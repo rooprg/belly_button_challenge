@@ -74,9 +74,9 @@ function buildCharts(sample) {
       let yticksRev = yticksSliced.reverse();
 
       var trace2 = {
-        x: ,
-        y: ,
-        name: 
+        x: sample_values.slice(0, 10).reverse(),
+        y: yticksRev,
+        text: otu_labels.slice(0, 10).reverse(), 
         orientation: 'h',
         type: 'bar',
         marker: {
@@ -87,7 +87,7 @@ function buildCharts(sample) {
   
       var data2 = [trace2];
   
-      var layout2 {
+      var layout2 = {
         title: "Top 10 Bacteria Cultures Found",
         xaxis: {title: "OTU_ID" },
         yaxis: {title: "Number of Bacteria"},
@@ -95,7 +95,7 @@ function buildCharts(sample) {
         height: 600,
         width: 600
       }
-  };
+  });
 
     // Render the Bar Chart
     Plotly.newPlot('myDiv', data2, layout2);
@@ -105,18 +105,20 @@ function init() {
   d3.json("https://static.bc-edx.com/data/dl-1-2/m14/lms/starter/samples.json").then((data) => {
 
     // Get the names field
-    let metadata = data.names;
+    let sampNames = data.names;
 
     // Use d3 to select the dropdown with id of `#selDataset`
-    let pageID = d3.select("#selDataset");
+    let sampleselector = d3.select("#selDataset");
 
     // Use the list of sample names to populate the select options
     // Hint: Inside a loop, you will need to use d3 to append a new
     // option for each sample name.
+    for (let i = 0; i < sampNames.length; i++) {
 
+    }
 
     // Get the first sample from the list
-
+    let primSamp = 
 
     // Build charts and metadata panel with the first sample
 
@@ -131,3 +133,4 @@ function optionChanged(newSample) {
 
 // Initialize the dashboard
 init();
+}
