@@ -6,7 +6,7 @@ function buildMetadata(sample) {
      let metaData = data.metadata;
     
      // Filter the metadata for the object with the desired sample number
-     let sampNumb = metaData.filter(sampleObj => sampleObj.id == sample);
+     let sampNumb = metaData.filter(samplesObj => samplesObj.id == sample);
      let samp = sampNumb[0];
      
      // Use d3 to select the panel with id of `#sample-metadata`
@@ -18,7 +18,7 @@ function buildMetadata(sample) {
      // Inside a loop, you will need to use d3 to append new
     // tags for each key-value in the filtered metadata.
      for (key in samp){
-       sammeta.append("h6").text(`${key.toUpperCase()}: ${result[key]}`)
+       sammeta.append("h6").text(`${key.toUpperCase()}: ${samp[key]}`)
      };
    });
  };
@@ -100,14 +100,14 @@ function init() {
     let sampleNames = data.names;
    
    // Use d3 to select the dropdown with id of `#selDataset`
-   let selector = d3.select("#selDataset");
+   let idselector = d3.select("#selDataset");
      
    // Use the list of sample names to populate the select options
-    // Hint: Inside a loop, you will need to use d3 to append a new
-    // option for each sample name.
+   // Hint: Inside a loop, you will need to use d3 to append a new
+   // option for each sample name.
 
-   for(let i = 0; i < sampleNames.length; i++) {
-     selector.append("option")
+   for (let i = 0; i < sampleNames.length; i++) {
+     idselector.append("option")
      .text(sampleNames[i])
      .property("value", sampleNames[i]);
    };
