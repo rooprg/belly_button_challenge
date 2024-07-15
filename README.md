@@ -1,7 +1,8 @@
 Belly Button Biodiversity Dashboard
 
 
-Deliverables:
+Deliverable:
+My final code is located in the static/js folder as a file titled "app_final_roop.js"
 
 
 Citations:
@@ -14,7 +15,11 @@ Citations:
 
 (4) Al Imran, A. How To Convert Json String To Map In Javascript. (2024, March 27). Retrieved from https://rswpthemes.com/how-to-convert-json-string-to-map-in-javascript/
 
-(5) Xpert Learning Associate - questions regarding:
+(5) Questions during office hours with instructor on 10-Jul-2024
+
+(6) Xpert Learning Associate - questions regarding:
 
 (a) Code syntax questions
+
+(b) JSON questions
 
