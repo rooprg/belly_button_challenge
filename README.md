@@ -1,4 +1,4 @@
-Belly Button Biodiversity Dashboard
+**BELLY BUTTON BIODIVERSITY DASHBOARD**
 
 
 **(1) Project Overview and Purpose:**
