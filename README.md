@@ -40,9 +40,6 @@ Function were built to:
 Demographic information is presented in a small table, with two types of charts (one bar chart and one bubble chart).
 
 
-![Bellybutton Biodiversity Dashboard](bellybutton_biodiversity_dashboard_roop.png)
-
-
 **(5) Results and Analysis:**
 
 
